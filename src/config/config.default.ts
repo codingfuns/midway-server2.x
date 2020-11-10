@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2020-10-20 14:38:20
  * @LastEditors: wujing
- * @LastEditTime: 2020-10-26 10:17:10
+ * @LastEditTime: 2020-11-10 11:43:00
  */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 

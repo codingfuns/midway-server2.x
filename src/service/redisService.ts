@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2020-10-21 10:55:25
  * @LastEditors: wujing
- * @LastEditTime: 2020-10-22 15:41:28
+ * @LastEditTime: 2020-11-10 11:17:12
  */
 import { Plugin, Provide } from "@midwayjs/decorator";
 import { IRedis } from "../interface";
@@ -13,7 +13,7 @@ export class RedisService implements IRedis {
   @Plugin('redis')
   redis: any
 
-  async set(key: string, value: string, seconds?: number) {
+  async set(key: string, value: any, seconds?: number) {
     const res: string = JSON.stringify(value)
     if (!seconds) {
       await this.redis.set(key, res)

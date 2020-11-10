@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2020-10-21 14:10:04
  * @LastEditors: wujing
- * @LastEditTime: 2020-10-23 09:52:45
+ * @LastEditTime: 2020-11-10 11:27:08
  */
 import { Controller, Get, Inject, Post, Provide } from "@midwayjs/decorator";
 import { Context } from "egg";
@@ -58,8 +58,7 @@ export class UserController{
   public async getUserInfo(ctx: Context){
     // const userId:number = ctx.body.userId
     const {token} = ctx.request.header;
-    const userName = await this.redisService.get(token);
-    const res:IUserData[] = await this.userService.findUserByName(userName);
-    ctx.body = res
+    const user = await this.redisService.get(token);
+    ctx.body = user
   }
 }

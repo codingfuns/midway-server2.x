@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2020-10-21 10:49:29
  * @LastEditors: wujing
- * @LastEditTime: 2020-10-22 15:46:15
+ * @LastEditTime: 2020-11-10 11:41:08
  */
 import {ALL, Config, Controller, Inject, Plugin, Post, Provide} from '@midwayjs/decorator'
 import { Context } from 'egg';
@@ -37,12 +37,12 @@ export class LoginController{
     if(userInfo){
       const isMatch = await bcrypt.compare(loginReqData.password, userInfo.password);
       if(isMatch){
-        const token = this.jwt.sign('payload', this.config.jwtConfig.secret);
-        this.redisService.set(token, userInfo.name, this.config.redisExpireTime);
+        const token = this.jwt.sign(loginReqData.username, this.config.jwtConfig.secret);
+        this.redisService.set(token, userInfo, this.config.redisExpireTime);
         ctx.status = 200
         ctx.body = {
           data: '登录成功！',
-          userId:userInfo.id,
+          userInfo:userInfo,
           token,
         }
       }else {

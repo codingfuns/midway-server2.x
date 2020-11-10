@@ -3,7 +3,7 @@
  * @Author: 
  * @Date: 2020-10-20 14:38:20
  * @LastEditors: wujing
- * @LastEditTime: 2020-10-22 15:45:16
+ * @LastEditTime: 2020-11-10 11:17:54
  */
 /**
  * @description User-Service parameters
@@ -15,7 +15,7 @@ export interface IUserOptions {
  * @description redis service 
  */
 export interface IRedis{
-  set(key: string, value: string, time: number): Promise<any>
+  set(key: string, value: any, time: number): Promise<any>
   get(key: string): Promise<any>
 }
 
