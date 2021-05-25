@@ -2,8 +2,8 @@
  * @Description: file content
  * @Author: 
  * @Date: 2020-10-20 14:38:20
- * @LastEditors: wujing
- * @LastEditTime: 2020-10-22 13:52:25
+ * @LastEditors: Mr.WJ
+ * @LastEditTime: 2021-05-22 15:03:49
  */
 // import { EggPlugin } from 'egg';
 // export default {
@@ -18,3 +18,4 @@ export const redis = {
   enable: true,
   package: 'egg-redis',
 }
+exports.static = true;

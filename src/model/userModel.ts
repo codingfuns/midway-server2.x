@@ -2,8 +2,8 @@
  * @Description: data model(entities) which match the database,initialize the model class in service to operate database
  * @Author: wujing
  * @Date: 2020-10-20 17:17:44
- * @LastEditors: wujing
- * @LastEditTime: 2020-10-26 10:17:21
+ * @LastEditors: Mr.WJ
+ * @LastEditTime: 2021-05-21 17:17:39
  */
 
 import {EntityModel} from '@midwayjs/orm'

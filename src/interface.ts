@@ -2,9 +2,14 @@
  * @Description: interface file
  * @Author: 
  * @Date: 2020-10-20 14:38:20
- * @LastEditors: wujing
- * @LastEditTime: 2020-11-10 11:17:54
+ * @LastEditors: Mr.WJ
+ * @LastEditTime: 2021-05-22 17:18:53
  */
+export interface IResponse{
+  code:number,
+  msg:string,
+  result:Array<any> | Object
+}
 /**
  * @description User-Service parameters
  */
@@ -57,4 +62,23 @@ export interface IUserService{
   findAllUserInfo(): Promise<any>
   findUserById(arg: number): Promise<any>
   findUserByName(arg: string): Promise<any>
+}
+
+export interface IFileData{
+  id ?: number
+  type : string
+  fileUrl: string
+  title: string
+  subTitle: string
+  description: string
+  subDescription: string
+}
+export interface IUpload{
+  fileUrl: string
+}
+/**
+ * @description upload-service function
+ */
+ export interface IUploadService{
+  saveFileInfo(arg:IFileData):Promise<any>
 }

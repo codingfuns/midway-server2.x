@@ -2,8 +2,8 @@
  * @Description: file content
  * @Author: 
  * @Date: 2020-10-20 14:38:20
- * @LastEditors: wujing
- * @LastEditTime: 2020-11-10 11:43:00
+ * @LastEditors: Mr.WJ
+ * @LastEditTime: 2021-05-22 16:29:39
  */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
@@ -12,6 +12,10 @@ export type DefaultConfig = PowerPartial<EggAppConfig>;
 export default (appInfo: EggAppInfo) => {
   const config = {} as DefaultConfig;
 
+  config.multipart = {
+    mode: 'stream',
+    autoFields:true
+  };
   config.security = {
     csrf: {
       enable: false,
@@ -57,6 +61,6 @@ export default (appInfo: EggAppInfo) => {
   }
   //redis 保存时间
   config.redisExpireTime = 24 * 60 * 60
-
+  
   return config;
 };
